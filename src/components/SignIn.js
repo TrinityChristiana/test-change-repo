@@ -1,8 +1,12 @@
-import React from 'react';
 import { Button } from 'react-bootstrap';
-import { signIn } from '../utils/auth';
+import { useAuth } from '../utils/context/authContext';
 
 function Signin() {
+  const { setUser } = useAuth();
+
+  const updateUser = () => {
+    setUser({});
+  };
   return (
     <div
       className="text-center d-flex flex-column justify-content-center align-content-center"
@@ -15,7 +19,7 @@ function Signin() {
     >
       <h1>Hi there!</h1>
       <p>Click the button below to login!</p>
-      <Button type="button" size="lg" className="copy-btn" onClick={signIn}>
+      <Button type="button" size="lg" className="copy-btn" onClick={updateUser}>
         Sign In
       </Button>
     </div>

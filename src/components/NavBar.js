@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
-import React from 'react';
 import Link from 'next/link';
 import { Navbar, Container, Nav, Button } from 'react-bootstrap';
-import { signOut } from '../utils/auth';
+import { useAuth } from '../utils/context/authContext';
 
 export default function NavBar() {
+  const { setUser } = useAuth();
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Link passHref href="/" className='navbar-brand'>
-         CHANGE ME
+        <Link passHref href="/" className="navbar-brand">
+          CHANGE ME
         </Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -20,8 +20,8 @@ export default function NavBar() {
             </Link>
           </Nav>
 
-          <Button variant="danger" onClick={signOut}>
-              Sign Out
+          <Button variant="danger" onClick={() => setUser(false)}>
+            Sign Out
           </Button>
         </Navbar.Collapse>
       </Container>
