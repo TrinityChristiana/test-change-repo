@@ -1,0 +1,56 @@
+[
+  {
+    "id": "shirt001",
+    "type": "shirt",
+    "name": "Basic Tee",
+    "description": "Classic cotton t-shirt",
+    "price": 20.0,
+    "sizes": ["S", "M", "L", "XL"],
+    "color": "Black"
+  },
+  {
+    "id": "shirt002",
+    "type": "shirt",
+    "name": "Logo Tee",
+    "description": "T-shirt with store logo",
+    "price": 25.0,
+    "sizes": ["M", "L"],
+    "color": "White"
+  },
+  {
+    "id": "pants001",
+    "type": "pants",
+    "name": "Chino Pants",
+    "description": "Slim fit casual pants",
+    "price": 40.0,
+    "sizes": ["30", "32", "34", "36"],
+    "color": "Khaki"
+  },
+  {
+    "id": "pants002",
+    "type": "pants",
+    "name": "Joggers",
+    "description": "Comfy everyday joggers",
+    "price": 35.0,
+    "sizes": ["S", "M", "L"],
+    "color": "Gray"
+  },
+  {
+    "id": "shoes001",
+    "type": "shoes",
+    "name": "Running Sneakers",
+    "description": "Lightweight sneakers for running",
+    "price": 60.0,
+    "sizes": ["7", "8", "9", "10", "11"],
+    "color": "Blue"
+  },
+  {
+    "id": "shoes002",
+    "type": "shoes",
+    "name": "Slide Sandals",
+    "description": "Easy slip-on sandals",
+    "price": 18.0,
+    "sizes": ["6", "7", "8", "9", "10"],
+    "color": "Black"
+  }
+]

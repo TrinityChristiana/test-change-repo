@@ -1,0 +1,12 @@
+{
+  "TEST123": {
+    "id": "user_01",
+    "name": "Trin",
+    "role": "customer"
+  },
+  "DEMOADMIN": {
+    "id": "user_02",
+    "name": "Admin",
+    "role": "admin"
+  }
+}

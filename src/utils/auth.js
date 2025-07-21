@@ -1,13 +1,16 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
+'use server';
 
-const signIn = () => {
-  const provider = new firebase.auth.GoogleAuthProvider();
-  firebase.auth().signInWithPopup(provider);
-};
+import fs from 'fs';
+import path from 'path';
 
-const signOut = () => {
-  firebase.auth().signOut();
-};
+const USERS_FILE = path.join(process.cwd(), 'src', 'utils', 'sample-data', 'users.json');
 
-export { signIn, signOut };
+export async function getUsers() {
+  const data = fs.readFileSync(USERS_FILE, 'utf-8');
+  return JSON.parse(data);
+}
+
+export async function getUserByCode(code) {
+  const users = await getUsers();
+  return users[code] || null;
+}

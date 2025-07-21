@@ -3,6 +3,8 @@
 'use client';
 
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
+import getCurrentUser from '../session';
+// import getCurrentUser from '@/utils/session';
 
 const AuthContext = createContext();
 
@@ -16,8 +18,23 @@ function AuthProvider(props) {
   // false = user is not logged in, but the app has loaded
   // an object/value = user is logged in
 
+  const updateUser = async (userCode) => {
+    const res = await fetch('/api/auth', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ code: userCode }),
+    });
+
+    const { user: apiUser } = await res.json();
+    setUser(apiUser);
+  };
   useEffect(() => {
-    setUser({});
+    const userCode = getCurrentUser();
+    if (!userCode) {
+      setUser(false);
+    } else {
+      updateUser(userCode);
+    }
   }, []);
 
   const value = useMemo(
