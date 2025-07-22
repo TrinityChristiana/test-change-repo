@@ -34,7 +34,7 @@ function Footer() {
 
 function HeroSection() {
   return (
-    <section className="relative bg-gray-900">
+    <section className="relative bg-gray-800">
       <img className="absolute inset-0 w-full h-full object-cover opacity-50" src="https://tailwindcss.com/plus-assets/img/ecommerce-images/home-page-01-hero-full-width.jpg" alt="Hero" />
       <div className="relative z-10 flex flex-col items-center justify-center text-center px-6 py-32 sm:py-64">
         <h2 className="text-4xl font-bold text-white sm:text-6xl">New arrivals are here</h2>
